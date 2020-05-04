@@ -9,6 +9,7 @@ import {
   PostContentWrapper,
   PostTitle,
   PostThumbnail,
+  MoreButton,
 } from "./PostCard.ui"
 import {
   setColorBackground,
@@ -18,6 +19,7 @@ import IconMusic from "../Icons/IconMusic.component"
 import IconBook from "../Icons/IconBook.component"
 import IconImages from "../Icons/IconImages.component"
 import IconPodcast from "../Icons/IconPodcast.component"
+import { SimpleLink } from "../Buttons/Button.ui"
 
 export const setIcon = (category: string) => {
   console.log(category)
@@ -42,7 +44,7 @@ const PostCard = (props: any) => {
   console.log(props)
   const { post } = props
 
-  const { categories, date, excerpt, title } = post
+  const { categories, date, excerpt, title, slug } = post
   const category = categories[0]
 
   const bgColor = setColorBackground()
@@ -77,6 +79,9 @@ const PostCard = (props: any) => {
         <PostContent>
           <span dangerouslySetInnerHTML={{ __html: excerpt }} />
         </PostContent>
+        <MoreButton>
+          <SimpleLink to={`/${slug}`}>lire la suite</SimpleLink>
+        </MoreButton>
       </PostContentWrapper>
     </PostCardWrapper>
   )

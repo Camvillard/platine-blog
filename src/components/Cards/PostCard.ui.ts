@@ -1,5 +1,6 @@
 import styled, { ThemeContext } from "styled-components"
 import { themeFonts, themeColors } from "../../theme/theme"
+import { SimpleLink } from "../Buttons/Button.ui"
 
 type PostCardWrapper = {
   bgColor: string
@@ -15,13 +16,13 @@ export const PostHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-top: -54px;
+  margin-top: -62px;
   margin-bottom: 6px;
 `
 
 export const PostIcon = styled.div`
-  width: 42px;
-  height: 42px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -62,4 +63,7 @@ export const PostTitle = styled.h3`
   font-size: 2.4rem;
 `
 
+export const MoreButton = styled.div`
+  text-align: right;
+`
 // ${props => props.theme}
