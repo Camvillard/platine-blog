@@ -34,6 +34,24 @@ module.exports = {
         // Add any options here
       },
     },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: "contenu.platineplatine.com",
+        protocol: "https",
+        hostingWPCOM: false,
+        useACF: true,
+        verboseOutput: true,
+        includedRoutes: [
+          "**/categories",
+          "**/posts",
+          "**/pages",
+          "**/comments",
+          "**/media",
+          "**/users",
+        ],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

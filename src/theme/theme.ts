@@ -20,3 +20,25 @@ export const themeColors = {
   mediumGray,
   darkGray,
 }
+
+const body = "'muli', sans-serif" // 300, 400,  600
+const headers = "'acumin-pro-extra-condensed', sans-serif" //800, 400
+const accent = "'acumin-pro-extra-condensed', sans-serif"
+
+export const themeFonts = {
+  body,
+  headers,
+  accent,
+}
+
+const smScreen = "768px"
+const mdScreen = "992px"
+const lgScreen = "1200px"
+const hgScreen = "1440px"
+
+export const themeBreakpoints = {
+  smScreen,
+  mdScreen,
+  lgScreen,
+  hgScreen,
+}

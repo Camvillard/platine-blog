@@ -1,10 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { createGlobalStyle } from "styled-components"
 
 import Header from "../Header/Header.component"
-import "./layout.css"
-import { createGlobalStyle } from "styled-components"
+import { MainContainer } from "../Containers/Container.ui"
+import { themeFonts, themeColors, themeBreakpoints } from "../../theme/theme"
 
 const GlobalStyle = createGlobalStyle`
 
@@ -29,17 +30,20 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: red;
+    color: ${themeColors.mediumGray};
     font-size: 1.6rem;
+    font-family: ${themeFonts.body};
+    font-weight: 400;
   }
 
   p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
+    font-family: ${themeFonts.body};
   }
 
   img {
     object-fit: cover;
-    max-width: 100;
+    max-width: 100%;
     margin: 0;
   }
 
@@ -50,6 +54,19 @@ const GlobalStyle = createGlobalStyle`
   a:active,
   a:hover {
     outline-width: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ${themeFonts.headers}t;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: ${themeColors.darkGray};
+  }
+
+  @media (min-width: ${themeBreakpoints.mdScreen}) {
+    p {
+      font-size: 1.6rem;
+    }
   }
 `
 
@@ -66,10 +83,10 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <GlobalStyle />
       <div>
-        <main>{children}</main>
+        <MainContainer>{children}</MainContainer>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
