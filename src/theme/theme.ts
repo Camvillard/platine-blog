@@ -32,8 +32,8 @@ export const themeFonts = {
 }
 
 const smScreen = "768px"
-const mdScreen = "992px"
-const lgScreen = "1200px"
+const mdScreen = "1024px"
+const lgScreen = "1280px"
 const hgScreen = "1440px"
 
 export const themeBreakpoints = {

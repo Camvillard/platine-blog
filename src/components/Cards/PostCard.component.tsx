@@ -20,10 +20,9 @@ import IconBook from "../Icons/IconBook.component"
 import IconImages from "../Icons/IconImages.component"
 import IconPodcast from "../Icons/IconPodcast.component"
 import { SimpleLink } from "../Buttons/Button.ui"
+import { TWordpressPost } from "../../shared/Wordpress.type"
 
 export const setIcon = (category: string) => {
-  console.log(category)
-
   switch (category) {
     case "jukebox":
       return <IconMusic width={28} color={"white"} />
@@ -40,8 +39,10 @@ export const setIcon = (category: string) => {
   }
 }
 
-const PostCard = (props: any) => {
-  console.log(props)
+type TPostCard = {
+  post: TWordpressPost
+}
+const PostCard = (props: TPostCard) => {
   const { post } = props
 
   const { categories, date, excerpt, title, slug } = post

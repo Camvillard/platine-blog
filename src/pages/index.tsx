@@ -4,6 +4,7 @@ import SEO from "../components/Seo/Seo.component"
 import PostCard from "../components/Cards/PostCard.component"
 import { Grid } from "../components/Containers/GridContainer.ui"
 import { graphql } from "gatsby"
+import { TWordpressPostNode } from "../shared/Wordpress.type"
 
 type TIndexProps = {
   data: any
@@ -16,7 +17,7 @@ const IndexPage = (props: TIndexProps) => {
     <Layout>
       <SEO title="Home" />
       <Grid columns={{ default: "1fr", sm: "1fr 1fr", md: "1fr 1fr 1fr" }}>
-        {allWordpressPost.edges.map(edge => {
+        {allWordpressPost.edges.map((edge: TWordpressPostNode) => {
           return <PostCard post={edge.node} key={edge.node.id} />
         })}
       </Grid>
